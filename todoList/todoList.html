@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="차주익" />
+    <meta name="description" content="TodoList" />
+    <meta name="keywords" content="html, css, javascript, ul, li" />
+    <meta name="copyright" content="차주익" />
+    <link rel="stylesheet" href="./css.css" />
+</head>
+<body>
+    <div id="container">
+        <header>
+            <div id="clock_sub"></div>
+            <div id="clock_main"></div>
+        </header>
+        <main>
+            <div id="list_container">
+                <div id="list_title">
+                    <h3>
+                        <iconify-icon icon="ep:list" width="40px" height="40px" ></iconify-icon>
+                        <span>TO DO LIST</span>
+                    </h3>
+                </div>
+                <div id="list_input">
+                    <input id="todo_list" type="text" maxlength="25" placeholder="할 일을 입력해주세요."/>
+                    <button id="add_btn">추가하기</button>
+                </div>
+                <div id="list_content">
+                    <h2 id="list_controler">
+                        <div>
+                            <span>리스트 펼쳐보기</span>
+                            <span id="checked_num">0 /</span>
+                            <span id="list_num">0</span>
+                        </div>
+                        <span id="list_dropdown">▼</span>
+                    </h2>
+                    <ul id="dropdown_content" class="act">
+
+                    </ul>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <script src="./javascript.js"></script>
+</body>
+</html>
