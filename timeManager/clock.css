@@ -1,0 +1,556 @@
+@charset 'utf-8';
+
+@font-face {
+   font-family: 'SBAggroB';
+   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroB.woff') format('woff');
+   font-weight: normal;
+   font-style: normal;
+}
+
+* {
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+   font-family: SBAggroB;
+}
+html, body {
+   width: 100%;
+   height: 100%;
+}
+
+main#clock_container {
+   width: 100vw;
+   height: 100vh;
+   background-image: url('./asset/bck_clock_day.png');
+   background-size: cover;
+   background-position: 100% 50%;
+   display: flex;
+   justify-content: center;
+   align-items: end;
+}
+main#clock_container.night {
+   background-image: url('./asset/bck_clock_night.png');
+}
+div#clock_text {
+   transition: all 400ms;
+   position: absolute;
+   margin: 0 auto;
+   display: flex;
+   flex-direction: column;
+   justify-items: center;
+   align-items: center;
+   top: 75px;
+   color: rgb(207, 207, 207);
+   filter: drop-shadow(0 5px 2px rgba(43, 43, 43, 0.5));
+}
+div#time_text {
+   text-align: center;
+   font-size: 55px;
+}
+div#day_text {
+   text-align: center;
+   font-size: 25px;
+}
+div#clock {
+   width: 300px;
+   margin-bottom: 20px;
+   position: relative;
+}
+div#clock>img {
+   width: 100%;
+}
+div#clock_body {
+   position: absolute;
+   width: calc(1512% / 2742 * 100);
+   height: calc(1512% / 3769 * 100);
+   border-radius: 50%;
+   top: 45%;
+   left: 22.5%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+div#clock_center {
+   margin-top: 4px;
+   margin-right: 0.5px;
+   background-color: rgb(41, 41, 41);
+   width: 5px;
+   height: 5px;
+   border-radius: 50%;
+}
+div#clock_sec_hand {
+   position: absolute;
+   width: 2px;
+   height: 45%;
+   top: 6%;
+   left: 49%;
+   background-color: rgb(240, 72, 72);
+   transform-origin: 50% 100%;
+}
+div#clock_min_hand {
+   position: absolute;
+   width: 3px;
+   height: 37%;
+   top: 14%;
+   left: 48.5%;
+   background-color: rgb(156, 102, 82);
+   transform-origin: 50% 100%;
+}
+div#clock_hour_hand {
+   position: absolute;
+   width: 4px;
+   height: 30%;
+   top: 21%;
+   left: 48.5%;
+   background-color: rgb(61, 61, 61);
+   transform-origin: 50% 100%;
+}
+
+@media screen and (max-width: 430px) {
+   /* 작은 모바일 기기에 대한 스타일 */
+   main#clock_container {
+      width: 100vw;
+      height: 100vh;
+      background-image: url('./asset/bck_clock_day.png');
+      background-size: cover;
+      background-position: 100% 50%;
+      display: flex;
+      justify-content: center;
+      align-items: end;
+   }
+   main#clock_container.night {
+      background-image: url('./asset/bck_clock_night.png');
+   }
+   div#clock_text {
+      transition: all 400ms;
+      position: absolute;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      justify-items: center;
+      align-items: center;
+      top: 75px;
+      color: rgb(207, 207, 207);
+      filter: drop-shadow(0 5px 2px rgba(43, 43, 43, 0.5));
+   }
+   div#time_text {
+      text-align: center;
+      font-size: 55px;
+   }
+   div#day_text {
+      text-align: center;
+      font-size: 25px;
+   }
+   div#clock {
+      width: 300px;
+      margin-bottom: 20px;
+      position: relative;
+   }
+   div#clock>img {
+      width: 100%;
+   }
+   div#clock_body {
+      position: absolute;
+      width: calc(1512% / 2742 * 100);
+      height: calc(1512% / 3769 * 100);
+      border-radius: 50%;
+      top: 45%;
+      left: 22.5%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+   }
+   div#clock_center {
+      margin-top: 4px;
+      margin-right: 0.5px;
+      background-color: rgb(41, 41, 41);
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+   }
+   div#clock_sec_hand {
+      position: absolute;
+      width: 2px;
+      height: 45%;
+      top: 6%;
+      left: 49%;
+      background-color: rgb(240, 72, 72);
+      transform-origin: 50% 100%;
+   }
+   div#clock_min_hand {
+      position: absolute;
+      width: 3px;
+      height: 37%;
+      top: 14%;
+      left: 48.5%;
+      background-color: rgb(156, 102, 82);
+      transform-origin: 50% 100%;
+   }
+   div#clock_hour_hand {
+      position: absolute;
+      width: 4px;
+      height: 30%;
+      top: 21%;
+      left: 48.5%;
+      background-color: rgb(61, 61, 61);
+      transform-origin: 50% 100%;
+   }
+};
+
+@media screen and (min-width: 431px) and (max-width: 767px) {
+   /* 모바일 기기에 대한 스타일 */
+   main#clock_container {
+      width: 100vw;
+      height: 100vh;
+      background-image: url('./asset/bck_clock_day.png');
+      background-size: cover;
+      background-position: 100% 50%;
+      display: flex;
+      justify-content: center;
+      align-items: end;
+   }
+   main#clock_container.night {
+      background-image: url('./asset/bck_clock_night.png');
+   }
+   div#clock_text {
+      transition: all 400ms;
+      position: absolute;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      justify-items: center;
+      align-items: center;
+      top: 75px;
+      color: rgb(207, 207, 207);
+      filter: drop-shadow(0 5px 2px rgba(43, 43, 43, 0.5));
+   }
+   div#time_text {
+      text-align: center;
+      font-size: 55px;
+   }
+   div#day_text {
+      text-align: center;
+      font-size: 25px;
+   }
+   div#clock {
+      width: 300px;
+      margin-bottom: 20px;
+      position: relative;
+   }
+   div#clock>img {
+      width: 100%;
+   }
+   div#clock_body {
+      position: absolute;
+      width: calc(1512% / 2742 * 100);
+      height: calc(1512% / 3769 * 100);
+      border-radius: 50%;
+      top: 45%;
+      left: 22.5%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+   }
+   div#clock_center {
+      margin-top: 4px;
+      margin-right: 0.5px;
+      background-color: rgb(41, 41, 41);
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+   }
+   div#clock_sec_hand {
+      position: absolute;
+      width: 2px;
+      height: 45%;
+      top: 6%;
+      left: 49%;
+      background-color: rgb(240, 72, 72);
+      transform-origin: 50% 100%;
+   }
+   div#clock_min_hand {
+      position: absolute;
+      width: 3px;
+      height: 37%;
+      top: 14%;
+      left: 48.5%;
+      background-color: rgb(156, 102, 82);
+      transform-origin: 50% 100%;
+   }
+   div#clock_hour_hand {
+      position: absolute;
+      width: 4px;
+      height: 30%;
+      top: 21%;
+      left: 48.5%;
+      background-color: rgb(61, 61, 61);
+      transform-origin: 50% 100%;
+   }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+   /* 태블릿 기기에 대한 스타일 */
+   main#clock_container {
+      width: 100vw;
+      height: 100vh;
+      background-image: url('./asset/bck_clock_day.png');
+      background-size: cover;
+      background-position: 100% 50%;
+      display: flex;
+      justify-content: center;
+      align-items: end;
+   }
+   main#clock_container.night {
+      background-image: url('./asset/bck_clock_night.png');
+   }
+   div#clock_text {
+      transition: all 400ms;
+      position: absolute;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      justify-items: center;
+      align-items: center;
+      top: 150px;
+      color: rgb(207, 207, 207);
+      filter: drop-shadow(0 5px 2px rgba(43, 43, 43, 0.5));
+   }
+   div#time_text {
+      font-size: 70px;
+   }
+   div#day_text {
+      font-size: 30px;
+   }
+   div#clock {
+      width: 300px;
+      margin-bottom: 20px;
+      position: relative;
+   }
+   div#clock>img {
+      width: 100%;
+   }
+   div#clock_body {
+      position: absolute;
+      width: calc(1512% / 2742 * 100);
+      height: calc(1512% / 3769 * 100);
+      border-radius: 50%;
+      top: 45%;
+      left: 22.5%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+   }
+   div#clock_center {
+      margin-top: 4px;
+      margin-right: 0.5px;
+      background-color: rgb(41, 41, 41);
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+   }
+   div#clock_sec_hand {
+      position: absolute;
+      width: 2px;
+      height: 45%;
+      top: 6%;
+      left: 49%;
+      background-color: rgb(240, 72, 72);
+      transform-origin: 50% 100%;
+   }
+   div#clock_min_hand {
+      position: absolute;
+      width: 3px;
+      height: 37%;
+      top: 14%;
+      left: 48.5%;
+      background-color: rgb(156, 102, 82);
+      transform-origin: 50% 100%;
+   }
+   div#clock_hour_hand {
+      position: absolute;
+      width: 4px;
+      height: 30%;
+      top: 21%;
+      left: 48.5%;
+      background-color: rgb(61, 61, 61);
+      transform-origin: 50% 100%;
+   }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1279px) {
+   /* 작은 데스크톱 및 랩톱에 대한 스타일 */
+   main#clock_container {
+      width: 100vw;
+      height: 100vh;
+      background-image: url('./asset/bck_clock_day.png');
+      background-size: cover;
+      background-position: 100% 50%;
+      display: flex;
+      justify-content: center;
+      align-items: end;
+   }
+   main#clock_container.night {
+      background-image: url('./asset/bck_clock_night.png');
+   }
+   div#clock_text {
+      transition: all 400ms;
+      position: absolute;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      justify-items: center;
+      align-items: center;
+      top: 150px;
+      color: rgb(207, 207, 207);
+      filter: drop-shadow(0 5px 2px rgba(43, 43, 43, 0.5));
+   }
+   div#time_text {
+      font-size: 80px;
+   }
+   div#day_text {
+      font-size: 35px;
+   }
+   div#clock {
+      width: 300px;
+      margin-bottom: 50px;
+      position: relative;
+   }
+   div#clock>img {
+      width: 100%;
+   }
+   div#clock_body {
+      position: absolute;
+      width: calc(1512% / 2742 * 100);
+      height: calc(1512% / 3769 * 100);
+      border-radius: 50%;
+      top: 45%;
+      left: 22.5%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+   }
+   div#clock_center {
+      margin-top: 4px;
+      margin-right: 0.5px;
+      background-color: rgb(41, 41, 41);
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+   }
+   div#clock_sec_hand {
+      position: absolute;
+      width: 2px;
+      height: 45%;
+      top: 6%;
+      left: 49%;
+      background-color: rgb(240, 72, 72);
+      transform-origin: 50% 100%;
+   }
+   div#clock_min_hand {
+      position: absolute;
+      width: 3px;
+      height: 37%;
+      top: 14%;
+      left: 48.5%;
+      background-color: rgb(156, 102, 82);
+      transform-origin: 50% 100%;
+   }
+   div#clock_hour_hand {
+      position: absolute;
+      width: 4px;
+      height: 30%;
+      top: 21%;
+      left: 48.5%;
+      background-color: rgb(61, 61, 61);
+      transform-origin: 50% 100%;
+   }
+}
+
+@media screen and (min-width: 1280px) {
+   /* 큰 데스크톱 및 랩톱에 대한 스타일 */
+   main#clock_container {
+      width: 100vw;
+      height: 100vh;
+      background-image: url('./asset/bck_clock_day.png');
+      background-size: cover;
+      background-position: 100% 100%;
+      display: flex;
+      justify-content: center;
+      align-items: end;
+   }
+   main#clock_container.night {
+      background-image: url('./asset/bck_clock_night.png');
+   }
+   div#clock_text {
+      transition: all 400ms;
+      position: absolute;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      justify-items: center;
+      align-items: center;
+      top: 150px;
+      color: rgb(207, 207, 207);
+      filter: drop-shadow(0 5px 2px rgba(43, 43, 43, 0.5));
+   }
+   div#time_text {
+      font-size: 80px;
+   }
+   div#day_text {
+      font-size: 35px;
+   }
+   div#clock {
+      width: 300px;
+      margin-bottom: 50px;
+      position: relative;
+   }
+   div#clock>img {
+      width: 100%;
+   }
+   div#clock_body {
+      position: absolute;
+      width: calc(1512% / 2742 * 100);
+      height: calc(1512% / 3769 * 100);
+      border-radius: 50%;
+      top: 45%;
+      left: 22.5%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+   }
+   div#clock_center {
+      margin-top: 4px;
+      margin-right: 0.5px;
+      background-color: rgb(41, 41, 41);
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+   }
+   div#clock_sec_hand {
+      position: absolute;
+      width: 2px;
+      height: 45%;
+      top: 6%;
+      left: 49%;
+      background-color: rgb(240, 72, 72);
+      transform-origin: 50% 100%;
+   }
+   div#clock_min_hand {
+      position: absolute;
+      width: 3px;
+      height: 37%;
+      top: 14%;
+      left: 48.5%;
+      background-color: rgb(156, 102, 82);
+      transform-origin: 50% 100%;
+   }
+   div#clock_hour_hand {
+      position: absolute;
+      width: 4px;
+      height: 30%;
+      top: 21%;
+      left: 48.5%;
+      background-color: rgb(61, 61, 61);
+      transform-origin: 50% 100%;
+   }
+}
